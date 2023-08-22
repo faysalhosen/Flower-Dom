@@ -15,6 +15,7 @@
 //     e.target
 // })
 
+totalPrice = 0;
 function handleClickShowBtn(target){
   const transferItemContainer = document.getElementById("Transfer-items")
   const itemName = target.parentNode.childNodes[1].innerText
@@ -23,5 +24,13 @@ function handleClickShowBtn(target){
   console.log(li);
   console.log(target.parentNode.childNodes[1].innerText);
   transferItemContainer.appendChild(li);
+
+  
+  const price = target.parentNode.childNodes[5].innerText.split(" ")[1]
+  console.log(price);
+
+   totalPrice = parseInt(totalPrice) + parseInt (price);
+   console.log(totalPrice)
+   document.getElementById("total").innerText = totalPrice
 
 }
